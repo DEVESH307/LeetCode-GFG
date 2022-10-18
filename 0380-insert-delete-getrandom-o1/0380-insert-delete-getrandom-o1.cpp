@@ -5,7 +5,6 @@ public:
     RandomizedSet() {
         
     }
-    
     bool insert(int val) {
         if(mp.find(val) != mp.end())
             return false;
@@ -15,15 +14,7 @@ public:
         return true;
     }
     bool remove(int val) {
-        // if(mp.find(val) == mp.end())
-        //     return false;
-        // auto it = mp.find(val);
-        // int idx = it->second;
-        // vec[idx] = vec.back();
-        // mp[vec[idx]] = idx;
-        // mp.erase(val);
-        // return true;
-        if(mp.find(val)==mp.end())
+        if(mp.find(val) == mp.end())
             return false;
         
         auto it = mp.find(val);
@@ -34,7 +25,6 @@ public:
         mp.erase(val);
         return true;
     }
-    
     int getRandom() {
         return vec[rand()%vec.size()];
     }

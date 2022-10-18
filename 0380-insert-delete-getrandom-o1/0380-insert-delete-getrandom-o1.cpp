@@ -18,7 +18,6 @@ public:
         // if(mp.find(val) == mp.end())
         //     return false;
         // auto it = mp.find(val);
-        // int key = it->first;
         // int idx = it->second;
         // vec[idx] = vec.back();
         // mp[vec[idx]] = idx;
@@ -28,9 +27,10 @@ public:
             return false;
         
         auto it = mp.find(val);
-        vec[it->second] = vec.back();
+        int idx = it->second;
+        vec[idx] = vec.back();
         vec.pop_back();
-        mp[vec[it->second]] = it->second;
+        mp[vec[idx]] = idx;
         mp.erase(val);
         return true;
     }

@@ -4,7 +4,7 @@ public:
         int count = 0;
         while(num){
             count++;
-            if(num%2  == 1){
+            if(num&1){
                 num -= 1;
             }
             else{

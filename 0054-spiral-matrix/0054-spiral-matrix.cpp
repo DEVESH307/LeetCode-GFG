@@ -9,25 +9,21 @@ public:
         int left = 0;
         int right = col-1;
         
-        while(top <= bottom && left <= right){
-            for(int i = left; i <= right; i++){
+        while(top <= bottom && left <= right && res.size() < row*col ){
+            for(int i = left; i <= right && res.size() < row*col; i++){
                 res.push_back(matrix[top][i]);
             }
             top++;
-            for(int i = top; i <= bottom; i++){
+            for(int i = top; i <= bottom && res.size() < row*col; i++){
                 res.push_back(matrix[i][right]);
             }
             right--;
-            if(top <= bottom){
-                for(int i = right; i >= left; i--){
-                    res.push_back(matrix[bottom][i]);
-                }
+            for(int i = right; i >= left && res.size() < row*col; i--){
+                res.push_back(matrix[bottom][i]);
             }
             bottom--;
-            if(left <= right){
-                for(int i = bottom; i >= top; i--){
-                    res.push_back(matrix[i][left]);
-                }
+            for(int i = bottom; i >= top && res.size() < row*col; i--){
+                res.push_back(matrix[i][left]);
             }
             left++;
         }

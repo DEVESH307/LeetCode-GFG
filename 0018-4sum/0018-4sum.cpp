@@ -11,7 +11,7 @@ public:
                 while(left_ptr < right_ptr){
                     // int new_target = target - (nums[i] + nums[j]);
                     // int curr_sum = nums[left_ptr] + nums[right_ptr]; 
-                    long long curr_sum = (long long)nums[i] + (long long)nums[j] + (long long)nums[left_ptr] + (long long)nums[right_ptr]; 
+                    long long curr_sum = 1LL*nums[i] + 1LL*nums[j] + 1LL*nums[left_ptr] + 1LL*nums[right_ptr]; 
                     if(curr_sum > target)
                         --right_ptr;
                     else if(curr_sum < target)

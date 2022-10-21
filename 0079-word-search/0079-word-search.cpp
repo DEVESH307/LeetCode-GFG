@@ -8,8 +8,8 @@ public:
             return true;
         if(i < 0 || i >= N || j < 0 || j >= M || board[i][j] == '.' || word[k] != board[i][j])
             return false;
-        if(word.size() == 1 && word[k] == board[i][j]) 
-            return true;
+        // if(word.size() == 1 && word[k] == board[i][j]) 
+        //     return true;
         board[i][j] = '.';
         int ans = false;
         for(int index = 0; index < 4; index++)

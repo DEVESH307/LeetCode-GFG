@@ -10,16 +10,9 @@ public:
         for(auto num: nums){
             sum += num;
             rem = sum%k;
-            if(rem < 0)
-                rem += k;
-            // rem = rem < 0 ? rem+k : rem;
-            // if(remFreq.find(rem) != remFreq.end()){
-                ans += remFreq[rem];
-                // remFreq[rem]++;
-            // }
-            // else{
-                remFreq[rem]++;
-            // }
+            if(rem < 0) rem += k;
+            ans += remFreq[rem];
+            remFreq[rem]++;
         }
         return ans;
     }

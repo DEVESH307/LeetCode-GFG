@@ -11,9 +11,11 @@ public:
         subsetsHelper(nums, index+1, res, temp);
     }
     vector<vector<int>> subsets(vector<int>& nums) {
+        // sort(nums.begin(), nums.end());
         vector<vector<int>> res;
         vector<int> temp;
         subsetsHelper(nums, 0, res, temp);
+        // sort(res.begin(), res.end());
         return res;
     }
 };

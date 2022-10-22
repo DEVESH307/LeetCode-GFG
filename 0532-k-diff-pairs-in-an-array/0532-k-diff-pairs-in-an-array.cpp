@@ -6,6 +6,8 @@ public:
         int slow = 0;
         int fast = 1;
         int ans = 0;
+        if (n == 0 || k < 0)   
+            return 0;
         while(fast < n){
             if(nums[fast] - nums[slow] > k){
                 slow++;

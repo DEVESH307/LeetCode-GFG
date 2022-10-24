@@ -9,14 +9,50 @@ using namespace std;
 
 class Solution{
     public:
+    int count(int nums[], int r, int& mid){
+        // function to calculate number of elements less than
+        // equal to mid
+        int cnt = 0;
+     
+        for (int i = 0; i <= r; i++)
+            if (nums[i] <= mid)
+                cnt++;
+     
+        return cnt;
+    }
     // arr : given array
     // l : starting index of the array i.e 0
     // r : ending index of the array i.e size-1
     // k : find kth smallest element and return using this function
     int kthSmallest(int arr[], int l, int r, int k) {
         //code here
-        sort(arr, arr+r+1);
-        return arr[k-1];
+        // sort(arr, arr+r+1);
+        // return arr[k-1];
+        int low = INT_MAX;
+        int high = INT_MIN;
+        // calculate minimum and maximum the array.
+        for (int i = 0; i <= r; i++) {
+            low = min(low, arr[i]);
+            high = max(high, arr[i]);
+        }
+        // Our answer range lies between minimum and maximum
+        // element of the array on which Binary Search is
+        // Applied
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            /*if the count of number of elements in the array
+              less than equal to mid is less than k then
+              increase the number. Otherwise decrement the
+              number and try to find a better answer.
+            */
+            if (count(arr, r, mid) < k)
+                low = mid + 1;
+     
+            else
+                high = mid;
+        }
+     
+        return low;
     }
 };
 

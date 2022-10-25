@@ -10,25 +10,24 @@ class Solution
     public:
     void sort012(int a[], int n){
         // code here 
-        int left = 0;
+        int low = 0;
         int mid = 0;
-        int right = n-1;
-        while(mid <= right){
+        int high = n-1;
+        while(mid <= high){
             if(a[mid] == 0){
-                swap(a[mid], a[left]);
-                left++;
+                swap(a[mid], a[low]);
+                low++;
                 mid++;
             }
             else if(a[mid] == 1){
                 mid++;
             }
             else{
-                swap(a[mid], a[right]);
-                right--;
+                swap(a[mid], a[high]);
+                high--;
             }
         }
     }
-    
 };
 
 //{ Driver Code Starts.
